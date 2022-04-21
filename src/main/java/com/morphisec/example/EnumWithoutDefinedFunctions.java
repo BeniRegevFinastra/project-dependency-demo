@@ -1,7 +1,7 @@
-package org.example.example;
+package com.morphisec.example;
 
-import org.example.enums.Country;
-import org.example.enums.Operator;
+import com.morphisec.enums.Country;
+import com.morphisec.enums.Operator;
 
 /**
  * This class runs examples to demonstrate {@link Country} {@code enum}  class

@@ -1,4 +1,4 @@
-package org.example.enums;
+package com.morphisec.enums;
 
 /**
  * This {@code enum} class has items that override nad implement an abstract method

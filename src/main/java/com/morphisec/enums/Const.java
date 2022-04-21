@@ -1,4 +1,4 @@
-package org.example.enums;
+package com.morphisec.enums;
 
 /**
  * This {@code enum} class has items with a single value, classic replacement
@@ -8,6 +8,8 @@ package org.example.enums;
  */
 public enum Const {
     TAB("\t"),
+    DOUBLE_TAB("\t\t"),
+    TRIPLE_TAB("\t\t\t"),
     ENTER("\r\n"),
     NEW_LINE("\n"),
     SINGLE_SPACE(" "),

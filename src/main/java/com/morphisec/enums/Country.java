@@ -1,4 +1,4 @@
-package org.example.enums;
+package com.morphisec.enums;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
@@ -76,13 +76,22 @@ public enum Country {
                 .forEach(System.out::println);
     }
 
+    public String toJson() {
+        return "{ \n" +
+                Const.TAB.getValue() + "fullName: \"" + this.getFullName() + "\", " + Const.NEW_LINE.getValue() +
+                Const.TAB.getValue() + "short2ch: \"" + this.getShort2ch() + "\", " + Const.NEW_LINE.getValue()+
+                Const.TAB.getValue() + "currency: \"" + this.getCurrency() + "\", " + Const.NEW_LINE.getValue()+
+                Const.TAB.getValue() + "language: \"" + this.getLanguage() + "\", " + Const.NEW_LINE.getValue()+
+                Const.TAB.getValue() + "countryCode: " + this.getCountryCode() + " }";
+    }
+
     public static String toJson(Country country) {
         return "{ \n" +
-                Const.TAB + "fullName: \"" + country.getFullName() + "\", \n" +
-                Const.TAB + "short2ch: \"" + country.getShort2ch() + "\", \n" +
-                Const.TAB + "currency: \"" + country.getCurrency() + "\", \n" +
-                Const.TAB + "language: \"" + country.getLanguage() + "\", \n" +
-                Const.TAB + "countryCode: " + country.getCountryCode() + ", \n" +
+                Const.TAB.getValue() + "fullName: \"" + country.getFullName() + "\", \n" +
+                Const.TAB.getValue() + "short2ch: \"" + country.getShort2ch() + "\", \n" +
+                Const.TAB.getValue() + "currency: \"" + country.getCurrency() + "\", \n" +
+                Const.TAB.getValue() + "language: \"" + country.getLanguage() + "\", \n" +
+                Const.TAB.getValue() + "countryCode: " + country.getCountryCode() + ", \n" +
                 " }";
     }
 }

@@ -1,7 +1,7 @@
-package org.example.example;
+package com.morphisec.example;
 
-import org.example.enums.Const;
-import org.example.enums.Country;
+import com.morphisec.enums.Const;
+import com.morphisec.enums.Country;
 
 /**
  * This class runs examples to demonstrate {@link Country} {@code enum}  class
@@ -12,17 +12,22 @@ public class CountryEnumExamples {
 
     public static void main(String[] args) {
         Country country = Country.ISRAEL;
+        System.out.println("* printAllValuesUsingForLoop");
         Country.printAllValuesUsingForLoop();
         System.out.println("-------------------------------------------------");
+        System.out.println("* printAllValuesUsingStreamAPI");
         Country.printAllValuesUsingStreamAPI();
         System.out.println("-------------------------------------------------");
-        System.out.println(country.getFullName() + Const.DOUBLE_SPACE +
-                        country.getShort2ch() + Const.DOUBLE_SPACE +
-                        country.getCurrency() + Const.DOUBLE_SPACE);
+        System.out.println("* Print a single-Country's values: \nfullName\tShort2ch\tCurrency");
+        System.out.println(country.getFullName() + Const.DOUBLE_TAB.getValue() +
+                        country.getShort2ch() + Const.TRIPLE_TAB.getValue() +
+                        country.getCurrency() + Const.DOUBLE_SPACE.getValue());
         System.out.println("-------------------------------------------------");
-        Country.stream().forEach(c -> System.out.println(c.getFullName() + Const.DOUBLE_SPACE +
-                c.getShort2ch() + Const.DOUBLE_SPACE +
-                c.getCurrency() + Const.DOUBLE_SPACE));
+        System.out.println("* Print all Country enum values using forEach method of Stream API: \nfullName\tShort2ch\tCurrency");
+        Country.stream().forEach(c -> System.out.println(
+                c.getFullName() + Const.DOUBLE_TAB.getValue() +
+                c.getShort2ch() + Const.TRIPLE_TAB.getValue() +
+                c.getCurrency() + Const.DOUBLE_SPACE.getValue()));
         System.out.println("-------------------------------------------------");
         System.out.println(Country.toJson(Country.CANADA));
         System.out.println(Country.toJson(Country.ISRAEL));
